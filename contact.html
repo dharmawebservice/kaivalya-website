@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Contact Us – Kaivalya Properties & Builders | Bangalore</title>
+  <meta name="description" content="Contact Kaivalya Properties & Builders, Bangalore. Get a free consultation, schedule a site visit, or enquire about our land, buildings and construction services.">
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <link rel="stylesheet" href="assets/css/contact.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar scrolled" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/images/logo.png" alt="Kaivalya Properties & Builders"/></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-terra nav-cta">Get a Quote</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html" class="active">Contact</a>
+  <a href="contact.html" class="btn btn-terra mob-cta">Get a Quote</a>
+</div>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=1600&q=70&auto=format&fit=crop" alt="" class="ph-img"/>
+  <div class="ph-content container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Contact Us</span></div>
+    <h1>Let's <em>Connect</em></h1>
+    <p>Our team responds within 24 hours. We're here to help you find your perfect property in Bangalore.</p>
+  </div>
+</section>
+
+<!-- CONTACT INFO CARDS -->
+<section class="section-pad">
+  <div class="container">
+    <div class="contact-cards">
+      <div class="cc-card reveal">
+        <div class="cc-icon">📞</div>
+        <h4>Call Us</h4>
+        <p>Mon–Sat, 9AM to 7PM</p>
+        <a href="tel:+919019995234">+91 90199 95234</a>
+        <a href="tel:+919980966610">+91 99809 66610</a>
+      </div>
+      <div class="cc-card dark reveal">
+        <div class="cc-icon">💬</div>
+        <h4>WhatsApp</h4>
+        <p>Chat with us instantly</p>
+        <a href="https://wa.me/919019995234">+91 90199 95234</a>
+        <a href="https://wa.me/919019995234" class="wa-pill">Open WhatsApp →</a>
+      </div>
+      <div class="cc-card reveal">
+        <div class="cc-icon">✉️</div>
+        <h4>Email Us</h4>
+        <p>Reply within 24 hours</p>
+        <a href="mailto:kaivalyaproperties@gmail.com">kaivalyaproperties@gmail.com</a>
+      </div>
+      <div class="cc-card dark reveal">
+        <div class="cc-icon">📍</div>
+        <h4>Visit Us</h4>
+        <p>Mon–Sat, 9AM to 7PM</p>
+        <a href="https://maps.app.goo.gl/zr2HqgXHXhAscxSv6">#5, Sri Patel KT Balappa Complex, Bhishma Circle, Kattigenahalli, Yelahanka, Bengaluru - 560064</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM + SIDEBAR -->
+<section class="section-pad bg-warm">
+  <div class="container">
+    <div class="contact-main">
+
+      <!-- FORM -->
+      <div class="form-wrap reveal-left">
+        <div id="formContent">
+          <h2>Send an <em>Enquiry</em></h2>
+          <p>Fill the form below and our property expert will get back to you within 2 business hours.</p>
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required/>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com"/>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="interest">I'm Interested In *</label>
+                <select id="interest" name="interest" required>
+                  <option value="">Select service</option>
+                  <option>Land / Open Plot</option>
+                  <option>Residential Apartment (2/3 BHK)</option>
+                  <option>Independent Villa</option>
+                  <option>Commercial Space</option>
+                  <option>Construction on My Plot</option>
+                  <option>NRI Investment</option>
+                  <option>General Enquiry</option>
+                  <option>Others</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="budget">Budget Range</label>
+                <select id="budget" name="budget">
+                  <option value="">Select budget</option>
+                  <option>Under ₹30 Lakhs</option>
+                  <option>₹30 – 60 Lakhs</option>
+                  <option>₹60L – 1 Crore</option>
+                  <option>₹1 – 2 Crores</option>
+                  <option>₹2 – 5 Crores</option>
+                  <option>Above ₹5 Crores</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="location">Preferred Location in Bangalore</label>
+              <select id="location" name="location">
+                <option value="">Select area</option>
+                <option>Sarjapur Road</option>
+                <option>Devanahalli / BIAL Area</option>
+                <option>Whitefield</option>
+                <option>Hennur Road</option>
+                <option>Electronic City</option>
+                <option>Kanakapura Road</option>
+                <option>Open to Suggestions</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us more about what you're looking for..."></textarea>
+            </div>
+            <div class="form-group">
+              <div class="checkbox-row">
+                <input type="checkbox" id="consent" required/>
+                <span>I agree to be contacted by Kaivalya Properties &amp; Builders regarding my enquiry. My details will not be shared with third parties.</span>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-terra" style="width:100%;justify-content:center;padding:16px;font-size:.95rem;">
+              Send Enquiry →
+            </button>
+            <p class="form-note">🔒 Your information is 100% secure and never shared.</p>
+          </form>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div class="success-circle">✓</div>
+          <h3>Thank You!</h3>
+          <p>Your enquiry has been received. Our property expert will contact you within 24 hours.</p>
+          <a href="projects.html" class="btn btn-terra">View Our Projects</a>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="sidebar-stack reveal-right">
+        <div class="map-box">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3197.627537369392!2d77.624612!3d13.116624999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDA2JzU5LjkiTiA3N8KwMzcnMjguNiJF!5e1!3m2!1sen!2sin!4v1780724067025!5m2!1sen!2sin"
+            width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class="office-box">
+          <h5> Office – Bangalore</h5>
+          <div class="o-row"><span class="o-icon">📍</span><span>#5, Sri Patel KT Balappa Complex, Bhishma Circle, Kattigenahalli, Yelahanka, Bengaluru - 560064</span></div>
+          <div class="o-row"><span class="o-icon">📞</span><span>+91 90199 95234 &nbsp;|&nbsp; +91 80 2345 6789</span></div>
+          <div class="o-row"><span class="o-icon">✉️</span><span>kaivalyaproperties@gmail.com</span></div>
+          <div class="o-row"><span class="o-icon">🕐</span><span>Monday to Saturday: 9:00 AM – 7:00 PM</span></div>
+        </div>
+        <!-- <div class="office-box">
+          <h5>Site Office – Devanahalli</h5>
+          <div class="o-row"><span class="o-icon">📍</span><span>Survey No. 34, Near BIAL Gate 2, Devanahalli, Bangalore – 562110</span></div>
+          <div class="o-row"><span class="o-icon">📞</span><span>+91 87654 32109</span></div>
+          <div class="o-row"><span class="o-icon">🕐</span><span>Monday to Sunday: 9:00 AM – 6:00 PM</span></div>
+        </div> -->
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="tag">Common Questions</span>
+      <h2 class="heading">Frequently Asked <em>Questions</em></h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">Are your projects RERA registered?<span class="faq-arrow">+</span></button>
+        <div class="faq-a">Yes. All our active residential and commercial projects are registered under Karnataka RERA. You can verify project details on the official Karnataka RERA portal using our registration numbers provided at the time of booking.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">Are the plots BDA or BBMP approved?<span class="faq-arrow">+</span></button>
+        <div class="faq-a">Absolutely. All our plot developments carry BDA, BBMP, or BMRDA approvals as applicable. We provide complete documentation — title deed, encumbrance certificate, survey sketch, and approval copies — before registration.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you assist with home loans?<span class="faq-arrow">+</span></button>
+        <div class="faq-a">Yes. We have tie-ups with SBI, HDFC, ICICI, Axis, and several co-operative banks. Our dedicated home loan team helps you get the best interest rates and processes your application end-to-end at no extra cost.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">Can NRIs invest in your projects?<span class="faq-arrow">+</span></button>
+        <div class="faq-a">Yes. We have a dedicated NRI desk handling virtual site tours, Power of Attorney assistance, FEMA compliance, and post-purchase rental management. We've served investors from USA, UAE, UK, Canada, Singapore, and Australia.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">What is the booking amount?<span class="faq-arrow">+</span></button>
+        <div class="faq-a">Booking amounts typically range from 5–10% of the property value. We offer flexible payment plans including construction-linked installments, time-linked plans, and custom options based on your financial preferences.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you offer construction on individual plots?<span class="faq-arrow">+</span></button>
+        <div class="faq-a">Yes! Our end-to-end construction service covers architectural design, BBMP plan approval, material procurement, construction, and interior finishing — all at a fixed, transparent price with milestone-based payment schedules.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-bg">
+    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1600&q=70&auto=format&fit=crop" alt="Bangalore villa"/>
+    <div class="cta-bg-layer"></div>
+  </div>
+  <div class="cta-inner">
+    <span class="tag light" style="margin-bottom:24px;">We're Here For You</span>
+    <h2>Your Dream Home in Bangalore <em>Starts Here</em></h2>
+    <p>Speak to our experts today — free consultation, zero pressure, complete transparency.</p>
+    <div class="cta-btns">
+      <a href="tel:+919019995234" class="btn btn-terra btn-lg">📞 Call Now</a>
+      <a href="https://wa.me/919019995234" class="btn btn-outline-lt btn-lg">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo.png" alt="Kaivalya Properties" class="footer-logo"/>
+        <p>Bangalore's most trusted new real estate company — building premium land, homes, and commercial spaces across Namma Bengaluru since 2024.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">in</a>
+          <a href="#" aria-label="YouTube">yt</a>
+          <a href="#" aria-label="LinkedIn">li</a>
+        </div>
+      </div>
+      <div class="f-col"><h5>Quick Links</h5><a href="index.html">Home</a><a href="about.html">About Us</a><a href="projects.html">Projects</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div>
+      <div class="f-col"><h5>Our Services</h5><a href="services.html">Land &amp; Plots</a><a href="services.html">Residential Buildings</a><a href="services.html">Construction</a><a href="services.html">Commercial Spaces</a><a href="services.html">Interior Design</a></div>
+      <div class="f-col"><h5>Contact Us</h5><a href="tel:+919019995234">📞 +91 90199 95234</a><a href="mailto:kaivalyaproperties@gmail.com">✉ kaivalyaproperties@gmail.com</a><a href="https://maps.app.goo.gl/zr2HqgXHXhAscxSv6">📍 #5, Sri Patel KT Balappa Complex, Bhishma Circle, Kattigenahalli, Yelahanka, Bengaluru - 560064</a><a>🕐 Mon–Sat: 9AM – 7PM</a></div>
+    </div>
+     <button class="scroll-top" id="scrollTop">
+      <svg width="22"
+           height="22"
+           viewBox="0 0 24 24"
+           fill="none"
+           stroke="currentColor"
+           stroke-width="2.5"
+           stroke-linecap="round"
+           stroke-linejoin="round">
+        <path d="M12 19V5"/>
+        <path d="M5 12L12 5L19 12"/>
+      </svg>
+    </button>
+
+    <div class="footer-bottom">
+
+    <div class="footer-copy">
+        <span>© 2024 Kaivalya Properties & Builders.</span>
+        <span>All Rights Reserved.</span>
+    </div>
+    <div class="footer-credit">
+        <span>Crafted with ♥ in Bengaluru by</span>
+
+        <a href="https://dws.monster"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="dws-link">
+
+            <span class="dws-dot"></span>
+            Dharma Web Services
+        </a>
+    </div>
+
+</div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop">↑</button>
+<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="assets/js/contact.js"></script>
+
+
+</body>
+</html>
