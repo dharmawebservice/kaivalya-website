@@ -1,4 +1,33 @@
 /* =====================================================
+   GLOBAL HORIZONTAL SCROLL FIX
+   ===================================================== */
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.container { 
+  max-width: 1240px; 
+  margin: 0 auto; 
+  padding: 0 28px; 
+  width: 100%; /* Ensures container never exceeds body width */
+}
+
+/* Fix Reveal Animations pushing past screen width on Mobile */
+@media (max-width: 768px) {
+  .reveal-left { transform: translateX(-15px) !important; }
+  .reveal-right { transform: translateX(15px) !important; }
+}
+
+/* =====================================================
    HOME PAGE CSS
    ===================================================== */
 
@@ -28,9 +57,16 @@
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes slideUp { from { opacity: 0; transform: translateY(36px); } to { opacity: 1; transform: translateY(0); } }
 
+/* MARQUEE STRIP - Added overflow fix */
+.marquee-strip { background: var(--olive); overflow: hidden; padding: 13px 0; width: 100%; max-width: 100vw; }
+.marquee-track { display: inline-flex; gap: 28px; animation: marquee 28s linear infinite; }
+.marquee-track span { font-size: .76rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #fff; }
+.marquee-track .dot { color: var(--terra-lt); font-size: .55rem; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
 /* ABOUT SNAP */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; width: 100%; }
-.about-visual { position: relative; }
+.about-visual { position: relative; width: 100%; }
 .about-main-img { width: 100%; height: 480px; border-radius: var(--r-lg); object-fit: cover; box-shadow: var(--sh-lg); }
 .about-accent { position: absolute; bottom: -28px; right: -28px; width: 220px; height: 160px; border-radius: var(--r); overflow: hidden; border: 5px solid #fff; box-shadow: var(--sh-md); z-index: 2; }
 .about-accent img { width: 100%; height: 100%; object-fit: cover; }
@@ -132,7 +168,7 @@
 .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
 /* ==========================
-   PREMIUM FOOTER BOTTOM
+   PREMIUM FOOTER BOTTOM & SCROLL TOP
 ========================== */
 .footer-bottom { padding: 28px 0; border-top: 1px solid rgba(255,255,255,.08); display: flex; justify-content: space-between; align-items: center; gap: 25px; font-size: .92rem; width: 100%; }
 .footer-copy { display: flex; gap: 10px; flex-wrap: wrap; color: rgba(255,255,255,.65); }
@@ -141,9 +177,9 @@
 .dws-link { display: flex; align-items: center; gap: 8px; color: #D4AF37; text-decoration: none; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; transition: .35s ease; }
 .dws-link:hover { color: #fff; transform: translateY(-2px); }
 .dws-dot { width: 8px; height: 8px; border-radius: 50%; background: #D4AF37; box-shadow: 0 0 10px #D4AF37, 0 0 20px rgba(212,175,55,.5); }
-.scroll-top { width: 58px; height: 58px; margin: 0 auto 30px; border: none; border-radius: 50%; background: linear-gradient(135deg, #c97758, #d78d6f); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 12px 30px rgba(201,119,88,.35); transition: .35s ease; }
-.scroll-top:hover { transform: translateY(-6px); }
 
+.scroll-top { width: 58px; height: 58px; margin: 0 auto 30px; border: none; border-radius: 50%; background: linear-gradient(135deg, #c97758, #d78d6f); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 12px 30px rgba(201,119,88,.35); transition: .35s ease; z-index: 99; position: relative;}
+.scroll-top:hover { transform: translateY(-6px); }
 
 /* =========================================
    RESPONSIVE LAYOUTS
@@ -166,7 +202,7 @@
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .about-main-img { height: 400px; }
   
-  /* Fixed the accent to prevent horizontal overflow */
+  /* Strictly confine the floating accent to prevent overflow */
   .about-accent { width: 140px; height: 100px; bottom: -16px; right: 10px; border-width: 4px; }
   .about-badge { padding: 14px 18px; top: 20px; left: 10px; }
   .about-badge .b-year { font-size: 1.6rem; }
