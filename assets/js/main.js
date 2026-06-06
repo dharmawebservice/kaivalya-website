@@ -1,10 +1,9 @@
 /* =====================================================
-   KAIVALYA PROPERTIES — MAIN JS
+   KAIVALYA PROPERTIES — MAIN JS (Fixed)
    ===================================================== */
-
 document.addEventListener('DOMContentLoaded', function () {
 
-  /* ── NAVBAR ── */
+  /* ── NAVBAR scroll effect ── */
   const navbar = document.getElementById('navbar');
   const isHome = ['/', '/index.html', ''].some(p =>
     window.location.pathname.endsWith(p) || window.location.pathname === p
@@ -22,17 +21,17 @@ document.addEventListener('DOMContentLoaded', function () {
   updateNav();
 
   /* ── HAMBURGER / MOBILE DRAWER ── */
-  const hamburger     = document.getElementById('hamburger');
-  const mobileDrawer  = document.getElementById('mobileDrawer');
+  const hamburger    = document.getElementById('hamburger');
+  const mobileDrawer = document.getElementById('mobileDrawer');
 
   if (hamburger && mobileDrawer) {
     hamburger.addEventListener('click', function () {
-      const open = mobileDrawer.classList.toggle('open');
-      hamburger.classList.toggle('open', open);
-      document.body.style.overflow = open ? 'hidden' : '';
+      const isOpen = mobileDrawer.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-    mobileDrawer.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
+    mobileDrawer.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
         mobileDrawer.classList.remove('open');
         hamburger.classList.remove('open');
         document.body.style.overflow = '';
@@ -43,54 +42,47 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ── SCROLL TO TOP ── */
   const scrollTopBtn = document.getElementById('scrollTop');
   if (scrollTopBtn) {
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', function () {
       scrollTopBtn.classList.toggle('show', window.scrollY > 500);
     }, { passive: true });
-    scrollTopBtn.addEventListener('click', () =>
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    );
+    scrollTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   }
 
   /* ── SCROLL REVEAL ── */
-  const revealSelectors = '.reveal, .reveal-left, .reveal-right';
-  const revealEls = document.querySelectorAll(revealSelectors);
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
   if ('IntersectionObserver' in window && revealEls.length) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          // stagger siblings
-          const siblings = Array.from(e.target.parentElement.children)
-            .filter(el => el.classList.contains('reveal') ||
-                          el.classList.contains('reveal-left') ||
-                          el.classList.contains('reveal-right'));
-          const idx = siblings.indexOf(e.target);
-          e.target.style.transitionDelay = `${idx * 0.1}s`;
-          e.target.classList.add('visible');
-          io.unobserve(e.target);
+    const io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          // Small stagger based on index among siblings
+          const parent = entry.target.parentElement;
+          const siblings = Array.from(parent.querySelectorAll(
+            ':scope > .reveal, :scope > .reveal-left, :scope > .reveal-right'
+          ));
+          const idx = siblings.indexOf(entry.target);
+          if (idx > 0) {
+            entry.target.style.transitionDelay = (idx * 0.1) + 's';
+          }
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    revealEls.forEach(el => io.observe(el));
+    revealEls.forEach(function (el) { io.observe(el); });
   } else {
-    // Fallback: just show everything
-    revealEls.forEach(el => el.classList.add('visible'));
+    // Fallback: show everything instantly
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
   }
 
   /* ── ACTIVE NAV LINK ── */
   const page = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a, .mobile-drawer a').forEach(link => {
-    const href = link.getAttribute('href').split('/').pop();
+  document.querySelectorAll('.nav-links a, .mobile-drawer a').forEach(function (link) {
+    const href = (link.getAttribute('href') || '').split('/').pop();
     if (href === page) link.classList.add('active');
-  });
-
-  /* ── SMOOTH ANCHOR LINKS ── */
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-    });
   });
 
 });
