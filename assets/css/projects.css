@@ -1,3 +1,16 @@
+/* =====================================================
+   GLOBAL FIX FOR MOBILE HORIZONTAL SCROLLING
+   ===================================================== */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100%;
+  width: 100vw;
+  position: relative;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 /* PROJECTS PAGE - BASE STYLES */
 .filter-bar-wrap { background: #fff; border-bottom: 1px solid var(--border); padding: 18px 0; position: sticky; top: 76px; z-index: 100; }
 .filter-bar { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }

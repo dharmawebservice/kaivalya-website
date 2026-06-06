@@ -1,4 +1,17 @@
 /* =====================================================
+   GLOBAL FIX FOR MOBILE HORIZONTAL SCROLLING
+   ===================================================== */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100%;
+  width: 100vw;
+  position: relative;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* =====================================================
    KAIVALYA PROPERTIES & BUILDERS — MASTER CSS
    Bangalore | Est. 2024
    ===================================================== */

@@ -1,3 +1,16 @@
+/* =====================================================
+   GLOBAL FIX FOR MOBILE HORIZONTAL SCROLLING
+   ===================================================== */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100%;
+  width: 100vw;
+  position: relative;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 /* ABOUT PAGE - BASE STYLES */
 .story-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; }
 .story-text > * + * { margin-top: 18px; }
